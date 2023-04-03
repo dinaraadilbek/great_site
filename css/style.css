@@ -1,0 +1,524 @@
+* {
+	box-sizing: border-box;
+}
+/*Base*/
+
+.no-scroll{
+	overflow-y: hidden;
+}
+
+body {
+	margin: 0;
+	background-color: #0B1D26;
+	background-image: url("./../img/bg/BG.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+.container_wide {
+	margin: 0 auto;
+	max-width: 1790px;
+	padding: 0 15px;
+}
+
+.container {
+	max-width: 1492px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.row {
+	display: flex;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+
+/*Header*/
+.header {
+	padding-top: 64px;
+	align-items: center;
+	padding-bottom: 700px;
+}
+
+.begin {
+	margin-bottom: 198px;
+}
+
+.logo {
+	font-weight: 700;
+	font-size: 32px;
+	font-family: sans-serif;
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+}
+
+.nav li {
+	margin-left: 40px;
+}
+
+.nav a {
+	position: relative;
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 18px;
+	transition: color 0.2s ease-in;
+}
+.nav a::after {
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	opacity: 0;
+	transition: all 0.2s ease-in;
+/*opacity означает что это добавление невидимый	*/
+}
+
+.nav a:hover::after  {
+	bottom: -5px;
+	opacity: 1;
+}
+
+
+.nav a:hover {
+	color: #FBD784;
+}
+
+.account {
+	position:relative;
+	padding-left: 30px;
+	font-size: 17px;
+	font-weight: 700;
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.2s ease-in;
+
+}
+
+.account::before {
+	position: absolute;
+	left: 0;
+	top: 30%;
+	transform: translateY(-50%);
+	display: block;
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-image: url('./../img/icons/cart.svg');
+}
+
+.account:hover {
+	color: #FBD784;
+}
+
+.nav-button {
+	position: relative;
+	z-index: 9;
+	display: none;
+	height: 25px;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	background: none;
+}
+
+.nav-button:focus,
+.nav-button:active {
+	outline: none;
+}
+
+.nav-button-icon {
+	position: relative;
+	display: block;
+	width: 42px;
+	height: 5px;
+	background-color: #fff;
+	border: none;
+}
+
+.nav-button-icon::before {
+	position: absolute;
+	left: 0;
+	top: -10px;
+	display: block;
+	content: "";
+	width: 42px;
+	height: 5px;
+	background-color: #fff;	
+}
+
+.nav-button-icon::after {
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	content: "";
+	display: block;
+	width: 42px;
+	height: 5px;
+	background-color: #fff;
+}
+
+.nav-button-close .nav-button-icon {
+	background-color: transparent;
+}
+
+.nav-button-close .nav-button-icon::before {
+	transform: rotate(45deg);
+	top: 0;
+}
+
+.nav-button-close .nav-button-icon::after {
+	transform: rotate(-45deg);
+	top: 0;
+}
+
+.mobile-nav {
+	position: fixed;
+	z-index: 8;
+	top: 0;
+	right: 0;
+
+	display: none;
+/*	display: flex;*/
+	flex-direction: column;
+	justify-content: space-between;
+	
+	width: 320px;
+	height: 100%;
+
+
+	background-color: rgba(11, 29, 38, 0.8);
+	padding: 70px 70px 50px 30px;
+}
+
+.mobile-nav .nav,
+.mobile-nav .account {
+	display: block;
+}
+
+.mobile-nav .nav ul {
+	flex-direction: column;
+}
+
+.mobile-nav .nav ul li {
+	margin: 0;
+	padding-bottom: 25px;
+}
+
+
+/*HERO-TITLE*/
+
+.hero-title {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 980px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+	transition: transform 0.8s cubic-bezier(1.000, 0.285, 0.000, 1.465);
+	padding-bottom: 600px; 
+/*	transition для плавно двигаться*/
+}
+
+.hero-title:hover {
+	transform: translateY(-5%);
+}
+
+.hero-title-category {
+	margin-bottom: 32px;
+	position: relative;
+	padding-left: 104px;
+	font-family: Trebuchet MS, sans-serif;
+	font-weight: 1000;
+	font-size: 18px;
+	line-height: 1.222;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	color: #FBD784;
+}
+.hero-title-category::before {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+	content: "";
+	width: 72px;
+	height: 2px;
+	background-color: #FBD784;
+}
+
+.hero-title-heading {
+	text-shadow: 0px 0px 15px #0009;
+	font-family: 'Chronicle Display';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 88px;
+	line-height: 1.136;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	margin-bottom: 32px;
+}
+.hero-title-scroll {
+	display: inline-block;
+	position: relative;
+	padding-right: 32px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.222;
+	color: #ffffff;
+}
+.hero-title-scroll::after {
+	display: block;
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 24px;
+	background-image: url("./../img/icons/arrow_down.svg");
+}
+
+
+/*MAIN*/
+
+
+/*ARTICLE*/
+.main {
+	margin-top:-200px;
+}
+.article {
+	margin-top: 200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 253px;
+}
+
+/*Если у нас три одинаковый элемент и мы хотим сделать на второго элемента 
+некоторые изменении. В этом случае мы можем использовать .article:nth-child(even) функцию*/
+.article:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.article-text {
+	position: relative;
+	padding-left: 150px;
+	max-width: 782px;
+	margin-right: 20px;
+}
+.article-text::before {
+	position:absolute;
+	left: 0;
+	top: 0;
+	transform: translateY(-50%);
+	display: block;
+	content: attr(data-number);
+
+	width: 240px;
+	height: 240px;
+	font-family: sans-serif;
+	font-style: normal;
+
+	font-weight: 700;
+	font-size: 240px;
+	line-height: 1;
+	color: rgba(255, 255, 255, 0.1);
+}
+
+.article-subtitle {
+	margin-bottom: 32px;
+	position: relative;
+	padding-left: 96px;
+	font-family: Trebuchet MS, sans-serif;
+	font-weight: 1000;
+	font-size: 18px;
+	line-height: 1.222;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	color: #FBD784;
+}
+.article-subtitle::before {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+	content: "";
+	width: 72px;
+	height: 2px;
+	background-color: #FBD784;
+}
+.article-title {
+	margin-bottom: 27px;
+	max-width: 555px;
+	font-family: Palatino, URW Palladio L, serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 64px;
+	line-height: 1.2;
+	color: #FFFFFF;
+
+}
+
+.article-text p {
+	margin-bottom: 27px;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 1.78;
+	color: #FFFFFF;
+}
+
+.article-read-more {
+	display: inline-block;
+	position: relative;
+	padding-right: 40px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.222;
+	color: #FBD784;
+	text-decoration: none;
+}
+.article-read-more::after {
+	display: block;
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 24px;
+	height: 16px;
+	background-image: url("./../img/icons/arrow_right.svg");
+}
+
+.article-img {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/*Footer*/
+.footer {
+	padding-bottom: 120px;
+}
+
+.footer-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-copyright {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-copyright-logo {
+	margin-bottom: 24px;
+}
+
+.footer-copyright-desc {
+	max-width: 303px;
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.78;
+}
+
+.footer-copyright-end {
+	margin-top: auto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.78;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-nav-wrapper {
+	display: flex;
+}
+
+.footer-nav + .footer-nav {
+	margin-left: 212px;
+}
+
+.footer-nav {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.78;
+	color: #ffffff;
+}
+
+.footer-nav-title {
+	margin-bottom: 24px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.333;
+	color: #FBD784;
+}
+
+.footer-nav ul {
+	width: 193px;
+
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-nav li {
+	padding: 0;
+	margin-top: ;
+	margin: 0;
+	margin-top: 16px;
+}
+
+.footer-nav a {
+	position: relative;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.footer-nav a::after {
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	opacity: 0;
+	transition: all 0.2s ease-in;
+/*opacity означает что это добавление невидимый	*/
+}
+
+.footer-nav a:hover::after  {
+	bottom: -5px;
+	opacity: 1;
+}
